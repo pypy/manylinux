@@ -23,6 +23,9 @@ function install_one_pypy {
     mv "$outdir" "$shortdir"
     local pypy=$shortdir/bin/pypy
 
+    # add a generic "python" symlink
+    ln -s pypy $shortdir/bin/python
+
     # remove debug symbols
     rm $shortdir/bin/*.debug
 
@@ -34,8 +37,27 @@ function install_one_pypy {
     ln -s /opt/pypy/$shortdir /opt/python/${abi_tag}
 }
 
-for PYPY in /pypy*.tar.bz2
+for TARBALL in /pypy*.tar.bz2
 do
-    install_one_pypy "$PYPY"
-    rm "$PYPY"
+    install_one_pypy "$TARBALL"
+    rm "$TARBALL"
 done
+
+
+# the following is copied&adapted from
+# pypa/manylinux/docker/build_scripts/build.sh
+
+for PYTHON in /opt/pypy/*/bin/python; do
+    # Smoke test to make sure that our Pythons work, and do indeed detect as
+    # being manylinux compatible:
+    $PYTHON /build_scripts/manylinux-check.py
+    # Make sure that SSL cert checking works
+    $PYTHON /build_scripts/ssl-check.py
+done
+
+# We do not need the Python test suites, or indeed the precompiled .pyc and
+# .pyo files. Partially cribbed from:
+#    https://github.com/docker-library/python/blob/master/3.4/slim/Dockerfile
+find /opt/pypy -depth \
+     \( -type d -a -name test -o -name tests \) \
+  -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) | xargs rm -rf
