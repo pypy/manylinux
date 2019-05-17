@@ -3,11 +3,12 @@ manylinux for PyPy
 .. image:: https://travis-ci.org/pypy/manylinux.svg?branch=master
     :target: https://travis-ci.org/pypy/manylinux
 
-Docker image for building PyPy manylinux_ wheels.
+`Docker image`_ for building PyPy manylinux_ wheels.
 
 This image extends the official manylinux image by installing PyPy. For now,
 the only supported platform is ``x86_64``.
 
+.. _`Docker image`: https://hub.docker.com/r/pypywheels/manylinux2010-pypy_x86_64
 .. _manylinux: https://github.com/pypa/manylinux
 
 At the moment of writing, this image provide the two following versions of
