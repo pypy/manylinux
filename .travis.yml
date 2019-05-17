@@ -1,0 +1,28 @@
+language: c
+sudo: required
+dist: trusty
+services:
+  - docker
+
+cache:
+  directories:
+    - $HOME/docker
+
+env:
+  global:
+    # DOCKERPASS
+    - secure: "J6WLnf3kFSiD2O91xl+ltNjQC+Oh8l3LopZIr9Z4NYMZFPWHuEC7QlAjTetL7pA/9queGv7XL1+g5URAJTCCZA6BxdaO5wUqHFyidNqllmBgILzlOm/MICrTIcvIOq/5tzxGXyeaHIBdaDC89j4LOBcfmImZGbFVFAkQDynYFwwJz1VXZwYFab8capGJuwSqkGgzJIV1PZiFcikDPxB4Oufego14bQpWs7OBKiLMGvzz3Lz0H+tY2FjO8Vk3HhBbKoH+hiZC9/553Nna3QiAUk8/UJgLSL6rwbUa9nQBDjG/EgSwb2BBiQLQuP1HTwyXaMxV9UruFRE6UL0yMqDV/7ASFkD1eTCYaGY+w1vibPjYGMYu9M0igsKdvTcr7YLt/tJKEWYOm0M+jEqYIdMFsMXqQZdq2O8vKAQR2jKp5PwmgdoSumaFCYvfJ1r5FnAgWwQhfp3cwacHJ9dzTKCkLp/DJuu64k13q+ytopb1yGs7GJLO4PXQYYNURCrWydqSEKgotvTysuB3B1fNgv+nHA8sDoBywIM2XfgKIsyOAfWHoQE1ifJCDArb8XX+DNAP7ENYG3YL6LzzdTVaJ7ZpzurPmXTa/ViP/LQ7Af/1+kHvTtBZj6xoBq32FsYrwqvu0D7R53sc3jFNrD7bomegWDHx3srmi+4awNRgEHP+WSI="
+
+jobs:
+  include:
+    - stage: "Build manylinux-pypy images"
+
+      script:
+        - TRAVIS_COMMIT=$TRAVIS_COMMIT ./build.sh
+
+      deploy:
+        provider: script
+        script: docker/deploy.sh
+        on:
+          branch: master
+          repo: antocuni/manylinux-pypy
