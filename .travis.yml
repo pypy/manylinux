@@ -11,11 +11,12 @@ cache:
 env:
   global:
     # DOCKERPASS
-    - secure: "J6WLnf3kFSiD2O91xl+ltNjQC+Oh8l3LopZIr9Z4NYMZFPWHuEC7QlAjTetL7pA/9queGv7XL1+g5URAJTCCZA6BxdaO5wUqHFyidNqllmBgILzlOm/MICrTIcvIOq/5tzxGXyeaHIBdaDC89j4LOBcfmImZGbFVFAkQDynYFwwJz1VXZwYFab8capGJuwSqkGgzJIV1PZiFcikDPxB4Oufego14bQpWs7OBKiLMGvzz3Lz0H+tY2FjO8Vk3HhBbKoH+hiZC9/553Nna3QiAUk8/UJgLSL6rwbUa9nQBDjG/EgSwb2BBiQLQuP1HTwyXaMxV9UruFRE6UL0yMqDV/7ASFkD1eTCYaGY+w1vibPjYGMYu9M0igsKdvTcr7YLt/tJKEWYOm0M+jEqYIdMFsMXqQZdq2O8vKAQR2jKp5PwmgdoSumaFCYvfJ1r5FnAgWwQhfp3cwacHJ9dzTKCkLp/DJuu64k13q+ytopb1yGs7GJLO4PXQYYNURCrWydqSEKgotvTysuB3B1fNgv+nHA8sDoBywIM2XfgKIsyOAfWHoQE1ifJCDArb8XX+DNAP7ENYG3YL6LzzdTVaJ7ZpzurPmXTa/ViP/LQ7Af/1+kHvTtBZj6xoBq32FsYrwqvu0D7R53sc3jFNrD7bomegWDHx3srmi+4awNRgEHP+WSI="
+    - secure: "Vlh5o7wH3AVM234pGD2QaFkXm267cIXPnowAsn+j5HB7B0P1r88EuSTr83ZsaS/5K4r/7w11VIt0qmg2d9lhCL00+QKnawimu0MrXcevesjFYetyrfxv0G+ofEn/R1KhEhqarCBk20ng1cEcPCx7p7Dg2R9oHAGHnooapLWdEb5xCE7djgOoulsOC4SNX4s5Pt9biEFwNS9TRzTjfpxR0kAcd6EYrdxIRJ6d2pwzdHWU6LYiEybLpkwRZysgcSSJeFiziIoYUglUPDXg+xAZA/vBSZQqmnjCa7VgcBU3znewgF7Nkz7vCaoHCZF60C7Ri2nkzRLkUgz0UjrxAKfDznqwFtMzy1dJ2xYqM+Pj1xXWUkf3hiT0AZfEMqx+9Tv4LEXwJuP519i0ZVcd4JrD7YkSntO9LQN9Xi5Z09dZlfAsKxEfP0o8gy4dnXTzIQczaMK/HHp1VEtErVEoIHydmio1Jwhf5/NQawsoP4MFP84Lb4G6SKPWkdQC+CYLg4nyo58dMUC5943z2vUzI/Fe37HLmFLkTUUsOcYpFkS5be//d2kqM2av+8gXOkVNpgX4H1rBsNGdc3Z/vv3neogzO3y1eDr/aDcKwlXkGgMcw9q+MIJ01h9rGN45d/723xC07F0lFKoPDtPenUCoWAzXXxuJjZdqWvxB7jrEQlzIUyg="
+
 
 jobs:
   include:
-    - stage: "Build manylinux-pypy images"
+    - stage: "Build pypy/manylinux images"
 
       script:
         - TRAVIS_COMMIT=$TRAVIS_COMMIT ./build.sh
@@ -25,4 +26,4 @@ jobs:
         script: docker/deploy.sh
         on:
           branch: master
-          repo: antocuni/manylinux-pypy
+          repo: pypy/manylinux
