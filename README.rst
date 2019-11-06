@@ -11,8 +11,12 @@ the only supported platform is ``x86_64``.
 .. _`Docker image`: https://hub.docker.com/r/pypywheels/manylinux2010-pypy_x86_64
 .. _manylinux: https://github.com/pypa/manylinux
 
-At the moment of writing, this image provide the two following versions of
+At the moment of writing, this image provide the following versions of
 PyPy:
+
+- PyPy2.7 7.2.0
+
+- PyPy3.6 7.2.0
 
 - PyPy2.7 7.1.1
 
