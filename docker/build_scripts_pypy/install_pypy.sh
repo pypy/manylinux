@@ -18,13 +18,38 @@ function install_one_pypy {
     cd /opt/pypy
     tar xf $tarball
 
+    if [ -f $outdir/bin/pypy ]; then
+        # add a generic "python" symlink
+        ln -s pypy $outdir/bin/python
+        ln -s pypy $outdir/bin/python2
+    fi
+
+    # Since we mix pypy and Squeaky's portable binaries some links may already exist...
+    if [ -f $outdir/bin/pypy3 ]; then
+        # pypy -> pypy3
+        if [ ! -f $outdir/bin/pypy ]; then
+
+            ln -s pypy3 $outdir/bin/pypy
+        fi
+
+        # python -> pypy3
+        if [ ! -f $outdir/bin/python ]; then
+
+            ln -s pypy3 $outdir/bin/python
+        fi
+        # python3 -> pypy3
+        if [ ! -f $outdir/bin/python3 ]; then
+
+            # make python -> pypy3 link
+
+            ln -s pypy3 $outdir/bin/python3
+        fi
+    fi
+
     # rename the directory to something shorter like pypy2.7-7.1.1
     shortdir=$(get_shortdir $outdir/bin/pypy)
     mv "$outdir" "$shortdir"
     local pypy=$shortdir/bin/pypy
-
-    # add a generic "python" symlink
-    ln -s pypy $shortdir/bin/python
 
     # remove debug symbols
     rm $shortdir/bin/*.debug
