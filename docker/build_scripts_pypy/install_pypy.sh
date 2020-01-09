@@ -18,6 +18,11 @@ function install_one_pypy {
     cd /opt/pypy
     tar xf $tarball
 
+    # the new PyPy 3 distributions don't have pypy symlinks to pypy3
+    if [ ! -f "$outdir/bin/pypy" ]; then
+        ln -s pypy3 $outdir/bin/pypy
+    fi
+
     # rename the directory to something shorter like pypy2.7-7.1.1
     shortdir=$(get_shortdir $outdir/bin/pypy)
     mv "$outdir" "$shortdir"
