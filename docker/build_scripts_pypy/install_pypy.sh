@@ -28,20 +28,17 @@ function install_one_pypy {
     if [ -f $outdir/bin/pypy3 ]; then
         # pypy -> pypy3
         if [ ! -f $outdir/bin/pypy ]; then
-
             ln -s pypy3 $outdir/bin/pypy
         fi
 
         # python -> pypy3
         if [ ! -f $outdir/bin/python ]; then
-
             ln -s pypy3 $outdir/bin/python
         fi
+
         # python3 -> pypy3
         if [ ! -f $outdir/bin/python3 ]; then
-
             # make python -> pypy3 link
-
             ln -s pypy3 $outdir/bin/python3
         fi
     fi
