@@ -14,6 +14,10 @@ the only supported platform is ``x86_64``.
 At the moment of writing, this image provide the following versions of
 PyPy:
 
+- PyPy2.7 7.3.0
+
+- PyPy3.6 7.3.0
+
 - PyPy2.7 7.2.0
 
 - PyPy3.6 7.2.0
