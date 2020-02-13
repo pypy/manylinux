@@ -51,9 +51,9 @@ All the following commands are equivalent and run the PyPy 2.7, version
 
 - ``/opt/pypy/pypy2.7-7.3.0/bin/python``
 
-- ``/opt/python/pp273-pypy_73/bin/pypy``
+- ``/opt/python/pp27-pypy_73/bin/pypy``
 
-- ``/opt/python/pp273-pypy_73/bin/python``
+- ``/opt/python/pp27-pypy_73/bin/python``
 
 Similarly, these are the commands to run PyPy 3.6, version 7.3.0:
 
@@ -61,23 +61,27 @@ Similarly, these are the commands to run PyPy 3.6, version 7.3.0:
 
 - ``/opt/pypy/pypy3.6-7.3.0/bin/python``
 
-- ``/opt/python/pp373-pypy36_pp73/bin/pypy``
+- ``/opt/python/pp36-pypy36_pp73/bin/pypy``
 
-- ``/opt/python/pp373-pypy36_pp73/bin/python``
+- ``/opt/python/pp36-pypy36_pp73/bin/python``
 
 
 PEP 425 Compatibility tags
 ---------------------------
 
-``pp273-pypy_73`` and ``pp373-pypy36_pp73`` are the `PEP 425`_ compliant
+``pp27-pypy_73`` and ``pp36-pypy36_pp73`` are the `PEP 425`_ compliant
 compatibility tag. In particular:
 
 - ``pp`` stands for PyPy (as opposed to ``cp`` which is CPython)
 
-- ``273`` and ``373`` mean "Python [2|3]", "PyPy 7.3.x".
+- ``27`` and ``36`` mean "Python 2.7|3.6"
 
 - ``pypy_73`` and ``pypy36_pp73`` (or before PyPy 7.3.0, ``pypy_41`` and
   ``pypy3_71``) are the binary ABI tags for the relevant version of PyPy.
   You can probably ignore them.
+
+Before PyPy 7.3.0 (and wheel 0.34), tags looked like ``pp273-pypy_73`` or
+``pp373-pypy36_pp73``, where ``273`` and ``373`` mean "Python [2|3]",
+"PyPy 7.3.x".
 
 .. _`PEP 425`: https://www.python.org/dev/peps/pep-0425/

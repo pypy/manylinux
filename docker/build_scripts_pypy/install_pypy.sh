@@ -7,6 +7,11 @@ function get_shortdir {
     $exe -c 'import sys; print("pypy%d.%d-%d.%d.%d" % (sys.version_info[:2]+sys.pypy_version_info[:3]))'
 }
 
+function get_requirements_txt {
+    local exe=$1
+    $exe -c 'import sys; print("requirements-pre-7.3.0.txt" if sys.pypy_version_info < (7,3,0) else "requirements.txt")'
+}
+
 # this is more or less equivalent to do_cpython_build, although we download a
 # prebuilt pypy instead of building it from scratch
 function install_one_pypy {
