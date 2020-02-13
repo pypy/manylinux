@@ -80,8 +80,9 @@ compatibility tag. In particular:
   ``pypy3_71``) are the binary ABI tags for the relevant version of PyPy.
   You can probably ignore them.
 
-Before PyPy 7.3.0 (and wheel 0.34), tags looked like ``pp273-pypy_73`` or
-``pp373-pypy36_pp73``, where ``273`` and ``373`` mean "Python [2|3]",
-"PyPy 7.3.x".
+Before pip 20 and wheel 0.34, tags looked like ``pp273-pypy_73`` or
+``pp373-pypy36_pp73``, where ``273`` and ``373`` mean  "Python [2|3]",
+"PyPy 7.3.x". Pre-7.3.0 versions of PyPy do not support pip>=20, and thus
+still rely on these old PyPy PEP 425 tags.
 
 .. _`PEP 425`: https://www.python.org/dev/peps/pep-0425/
