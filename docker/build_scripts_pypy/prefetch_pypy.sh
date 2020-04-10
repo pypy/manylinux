@@ -22,6 +22,6 @@ fetch_source pypy3.6-7.1.1-beta-linux_x86_64-portable.tar.bz2 "$SQUEAKY_BITBUCKE
 fetch_source pypy-7.2.0-linux_x86_64-portable.tar.bz2 "$SQUEAKY_GITHUB_URL/pypy-7.2.0"
 fetch_source pypy3.6-7.2.0-linux_x86_64-portable.tar.bz2 "$SQUEAKY_GITHUB_URL/pypy3.6-7.2.0"
 
-# pypy 7.3.0
-fetch_source pypy2.7-v7.3.0-linux64.tar.bz2 "$URL"
-fetch_source pypy3.6-v7.3.0-linux64.tar.bz2 "$URL"
+# pypy 7.3.1
+fetch_source pypy2.7-v7.3.1-linux64.tar.bz2 "$URL"
+fetch_source pypy3.6-v7.3.1-linux64.tar.bz2 "$URL"

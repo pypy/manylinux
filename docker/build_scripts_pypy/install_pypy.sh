@@ -40,7 +40,7 @@ function install_one_pypy {
     rm $shortdir/bin/*.debug
 
     # install and upgrade pip
-    $pypy -m ensurepip
+    $pypy -m ensurepip --default-pip
     $pypy -m pip install -U --require-hashes -r /build_scripts/requirements.txt
 
     local abi_tag=$($pypy /build_scripts/python-tag-abi-tag.py)
