@@ -22,10 +22,6 @@ PyPy:
 
 - PyPy3.6 7.2.0
 
-- PyPy2.7 7.1.1
-
-- PyPy3.6 7.1.1
-
 Live example
 -------------
 
