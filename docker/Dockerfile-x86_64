@@ -1,9 +1,11 @@
 FROM quay.io/pypa/manylinux2010_x86_64
 LABEL maintainer="Antonio Cuni"
 
-COPY sources /
 COPY build_scripts /build_scripts
 COPY build_scripts_pypy /build_scripts_pypy
-RUN bash build_scripts_pypy/install_pypy.sh && rm -rf build_scripts*
+RUN : \
+    && build_scripts_pypy/prefetch_pypy.sh \
+    && build_scripts_pypy/install_pypy.sh \
+    && rm -rf /sources /build_scripts*
 
 CMD ["/bin/bash"]

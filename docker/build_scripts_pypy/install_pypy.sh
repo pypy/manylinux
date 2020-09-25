@@ -47,7 +47,7 @@ function install_one_pypy {
     ln -s /opt/pypy/$shortdir /opt/python/${abi_tag}
 }
 
-for TARBALL in /pypy*.tar.bz2
+for TARBALL in /sources/pypy*.tar.bz2
 do
     install_one_pypy "$TARBALL"
     rm "$TARBALL"
