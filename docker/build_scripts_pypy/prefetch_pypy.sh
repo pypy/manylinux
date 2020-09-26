@@ -2,7 +2,7 @@
 
 set -ex
 
-SOURCES=docker/sources
+SOURCES=/sources
 SQUEAKY_GITHUB_URL=https://github.com/squeaky-pl/portable-pypy/releases/download # old releases
 URL=https://downloads.python.org/pypy # new releases
 
@@ -10,7 +10,7 @@ URL=https://downloads.python.org/pypy # new releases
 MY_DIR=$(dirname "${BASH_SOURCE[0]}")
 . $MY_DIR/../build_scripts/build_utils.sh
 
-[ -d "$SOURCES" ] || mkdir "$SOURCES"
+mkdir -p "$SOURCES"
 cd "$SOURCES"
 
 # pypy 7.2.0
