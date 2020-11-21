@@ -14,11 +14,11 @@ the only supported platform is ``x86_64``.
 At the moment of writing, this image provide the following versions of
 PyPy:
 
-- PyPy2.7 7.3.2
+- PyPy2.7 7.3.3
 
-- PyPy3.6 7.3.2
+- PyPy3.6 7.3.3
 
-- PyPy3.7 7.3.2
+- PyPy3.7 7.3.3
 
 - PyPy2.7 7.2.0
 
@@ -43,21 +43,21 @@ also symlinked to ``/opt/python``. Moreover, each installation of PyPy
 contains also a ``python`` symlink.
 
 All the following commands are equivalent and run the PyPy 2.7, version
-7.3.2. You can use whatever fits best in your build system:
+7.3.3. You can use whatever fits best in your build system:
 
-- ``/opt/pypy/pypy2.7-7.3.2/bin/pypy``
+- ``/opt/pypy/pypy2.7-7.3.3/bin/pypy``
 
-- ``/opt/pypy/pypy2.7-7.3.2/bin/python``
+- ``/opt/pypy/pypy2.7-7.3.3/bin/python``
 
 - ``/opt/python/pp27-pypy_73/bin/pypy``
 
 - ``/opt/python/pp27-pypy_73/bin/python``
 
-Similarly, these are the commands to run PyPy 3.6, version 7.3.2:
+Similarly, these are the commands to run PyPy 3.6, version 7.3.3:
 
-- ``/opt/pypy/pypy3.6-7.3.2/bin/pypy``
+- ``/opt/pypy/pypy3.6-7.3.3/bin/pypy``
 
-- ``/opt/pypy/pypy3.6-7.3.2/bin/python``
+- ``/opt/pypy/pypy3.6-7.3.3/bin/python``
 
 - ``/opt/python/pp36-pypy36_pp73/bin/pypy``
 
