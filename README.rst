@@ -11,8 +11,7 @@ the only supported platform is ``x86_64``.
 .. _`Docker image`: https://hub.docker.com/r/pypywheels/manylinux2010-pypy_x86_64
 .. _manylinux: https://github.com/pypa/manylinux
 
-At the moment of writing, this image provide the following versions of
-PyPy:
+At the moment of writing, this image provides the following versions of PyPy:
 
 - PyPy2.7 7.3.3
 
@@ -27,7 +26,7 @@ PyPy:
 Live example
 -------------
 
-`pypy-manylinux-demo`_ is an example project which demonstrate how to build
+`pypy-manylinux-demo`_ is an example project which demonstrates how to build
 CPython and PyPy wheels using Travis CI and this image. It is a fork of the
 official `python-manylinux-demo`, and shows that building wheels for PyPy is
 as easy as changing the image name!
@@ -42,7 +41,7 @@ The various PyPy versions are installed inside ``/opt/pypy/``, and they are
 also symlinked to ``/opt/python``. Moreover, each installation of PyPy
 contains also a ``python`` symlink.
 
-All the following commands are equivalent and run the PyPy 2.7, version
+All the following commands are equivalent and will run PyPy 2.7, version
 7.3.3. You can use whatever fits best in your build system:
 
 - ``/opt/pypy/pypy2.7-7.3.3/bin/pypy``
