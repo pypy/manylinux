@@ -61,6 +61,8 @@ Similarly, these are the commands to run PyPy 3.7, version 7.3.4:
 
 - ``/opt/python/pp37-pypy37_pp73/bin/python``
 
+The paths for PyPy 7.3.3 Python 3.6 are completely analogous to the ones for 3.7.
+
 
 PEP 425 Compatibility tags
 ---------------------------
