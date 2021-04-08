@@ -34,7 +34,9 @@ function install_one_pypy {
     local pypy=$shortdir/bin/pypy
 
     # add a generic "python" symlink
-    ln -s pypy $shortdir/bin/python
+    if [ ! -f "$shortdir/bin/python" ]; then
+        ln -s pypy $shortdir/bin/python
+    fi
 
     # remove debug symbols
     rm $shortdir/bin/*.debug
