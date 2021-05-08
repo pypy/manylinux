@@ -14,11 +14,11 @@ the only supported platform is ``x86_64``.
 At the moment of writing, this image provide the following versions of
 PyPy:
 
-- PyPy2.7 7.3.3
+- PyPy2.7 7.3.4
+
+- PyPy3.7 7.3.4
 
 - PyPy3.6 7.3.3
-
-- PyPy3.7 7.3.3
 
 - PyPy2.7 7.2.0
 
@@ -43,27 +43,27 @@ also symlinked to ``/opt/python``. Moreover, each installation of PyPy
 contains also a ``python`` symlink.
 
 All the following commands are equivalent and run the PyPy 2.7, version
-7.3.3. You can use whatever fits best in your build system:
+7.3.4. You can use whatever fits best in your build system:
 
-- ``/opt/pypy/pypy2.7-7.3.3/bin/pypy``
+- ``/opt/pypy/pypy2.7-7.3.4/bin/pypy``
 
-- ``/opt/pypy/pypy2.7-7.3.3/bin/python``
+- ``/opt/pypy/pypy2.7-7.3.4/bin/python``
 
 - ``/opt/python/pp27-pypy_73/bin/pypy``
 
 - ``/opt/python/pp27-pypy_73/bin/python``
 
-Similarly, these are the commands to run PyPy 3.6, version 7.3.3:
+Similarly, these are the commands to run PyPy 3.7, version 7.3.4:
 
-- ``/opt/pypy/pypy3.6-7.3.3/bin/pypy``
+- ``/opt/pypy/pypy3.7-7.3.4/bin/pypy``
 
-- ``/opt/pypy/pypy3.6-7.3.3/bin/python``
+- ``/opt/pypy/pypy3.7-7.3.4/bin/python``
 
-- ``/opt/python/pp36-pypy36_pp73/bin/pypy``
+- ``/opt/python/pp37-pypy37_pp73/bin/pypy``
 
-- ``/opt/python/pp36-pypy36_pp73/bin/python``
+- ``/opt/python/pp37-pypy37_pp73/bin/python``
 
-The paths for PyPy 3.7 are completely analogous to the ones for 3.6.
+The paths for PyPy 7.3.3 Python 3.6 are completely analogous to the ones for 3.7.
 
 
 PEP 425 Compatibility tags
@@ -74,9 +74,9 @@ compatibility tag. In particular:
 
 - ``pp`` stands for PyPy (as opposed to ``cp`` which is CPython)
 
-- ``27`` and ``36`` mean "Python 2.7|3.6"
+- ``27`` and ``37`` mean "Python 2.7|3.7"
 
-- ``pypy_73`` and ``pypy36_pp73`` (or before PyPy 7.3.0, ``pypy_41`` and
+- ``pypy_73`` and ``pypy37_pp73`` (or before PyPy 7.3.0, ``pypy_41`` and
   ``pypy3_71``) are the binary ABI tags for the relevant version of PyPy.
   You can probably ignore them.
 
