@@ -1,5 +1,12 @@
-manylinux for PyPy
-==================
+manylinux for PyPy - archived
+=============================
+
+.. note::
+  **This repo is archived. Please use the official manylinux_ images instead**
+
+Older info
+----------
+
 .. image:: https://travis-ci.org/pypy/manylinux.svg?branch=master
     :target: https://travis-ci.org/pypy/manylinux
 
